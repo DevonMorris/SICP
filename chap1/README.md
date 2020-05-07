@@ -25,3 +25,8 @@ it.
 
 Applicative order substitutes the arguments and then applied the procedure. It
 tends to be more efficient and reduces reduntant evaluations.
+
+## New-If exercise
+Note that the new-if exercise 1.6 uses applicative order execution. Which
+means that it must evaluate its arguments before substitution. This leads to a
+case of infinite recursion, which is bad.
