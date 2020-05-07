@@ -32,3 +32,42 @@
 (define circumference (* 2 pi radius))
 area
 circumference
+
+; procedure definition. Tell the program _how to_ instead of what
+; notably this is doing 2 things. Creating a procedure and naming it. We should
+; be able to separate these
+(define (square x) (* x x))
+
+; use the procedure
+(square 21)
+
+; obviously we can use composition of procedures
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+(sum-of-squares 3 4)
+
+; Conditionals
+(define (abs x)
+  (cond ((> x 0) x)
+        ((= x 0) 0)
+        ((< x 0) (- x))))
+
+(abs 3)
+(abs 0)
+(abs -3)
+
+; default clause
+(define (abs x)
+  (cond ((< x 0) (- x))
+        (else x)))
+
+; if is a special form of cond
+(define (abs x)
+  (if (< x 0)
+    (- x)
+    x))
+
+; and or and not can produce compound predicate
+(and (< 3 4) (> 3 4))
+(or (< 3 4) (> 3 4))
+(not (< 3 4))
